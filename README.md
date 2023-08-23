@@ -126,3 +126,52 @@ Modificare Crontab di sudo
 ```
 00 23 * * 0 /scripts/update_ca.sh
 ```
+
+# VM Linux - Enlarge Partitions
+
+Allargare partizioni VM linux
+
+Verificare l'attuale capacità
+```
+df -h
+```
+
+## Scansione di modifiche ai dischi
+```
+sudo su
+```
+Sostituire X con la partizione da allargare (solitamente sda)
+```
+echo 1>/sys/class/block/sdX/device/rescan
+```
+### Utilizzo di Parted
+Avvio parted
+```
+parted
+```
+Visualizzare partizione
+```
+print
+```
+Scegliere la partizione da allargare (solitamente parteizione 3)
+```
+resizepart (numero partizione)
+```
+```
+quit
+```
+
+### Estedere partizione
+Scegliere la partizione da allargare
+```
+pvresize /dev/sdaX
+```
+```
+lvextend -l +100%FREE /dev/mapper/ubuntu--vg-ubuntu--lv
+resize2fs /dev/mapper/ubuntu--vg-ubuntu--lv
+```
+### Verificare la nuova capacità
+```
+df -h
+```
+
