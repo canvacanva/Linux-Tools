@@ -28,6 +28,8 @@ Se necessario scegliere un timezione server diverso
 
 ```
 sudo timedatectl set-timezone Europe/Rome
+sudo echo "#Custom NTP Server" >> /etc/ntp.conf
+sudo echo "pool ntp.dominiocliente.estensione" >> /etc/ntp.conf
 ```
 ```
 sudo service ntp stop
