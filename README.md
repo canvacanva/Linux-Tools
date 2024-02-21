@@ -22,7 +22,7 @@ sudo apt-get install open-vm-tools
 
 ## NTP
 ```
-apt-get install ntp -y
+sudo apt-get install ntp -y
 ```
 Se necessario scegliere un timezione server diverso
 
