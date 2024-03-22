@@ -179,6 +179,7 @@ df -h
 
 
 # IBM As400 connect su Linux
+https://ibmi-oss-docs.readthedocs.io/en/latest/odbc/installation.html
 ```
 sudo apt update
 curl https://public.dhe.ibm.com/software/ibmi/products/odbc/debs/dists/1.1.0/ibmi-acs-1.1.0.list | sudo tee /etc/apt/sources.list.d/ibmi-acs-1.1.0.list
@@ -218,5 +219,20 @@ Connetto
 isql DataTest
 ```
 
+# SQL ODBC DIVER su Linux
+https://learn.microsoft.com/it-it/sql/connect/php/installation-tutorial-linux-mac?view=sql-server-ver16#installing-on-ubuntu
 
+Esempio versione di PHP precedenti:
+```
+sudo wget https://packages.microsoft.com/keys/microsoft.asc | sudo tee /etc/apt/trusted.gpg.d/microsoft.asc
+sudo curl https://packages.microsoft.com/config/ubuntu/$(lsb_release -rs)/prod.list > /etc/apt/sources.list.d/mssql-release.list
+# aggiungere trust sulla repo scaricata: #add deb [trusted=yes]
+sudo apt-get update
+sudo ACCEPT_EULA=Y apt-get install -y msodbcsql17 /oppure sudo ACCEPT_EULA=Y apt-get install -y msodbcsql18
+sudo ACCEPT_EULA=Y apt-get install -y mssql-tools
+apt-get install -y unixodbc-dev
+sudo pecl install sqlsrv /oppure sudo pecl install sqlsrv-5.10.1
+sudo pecl install pdo_sqlsrv /oppure sudo pecl install pdo_sqlsrv-5.10.1
+# Continuare poi con la guida su link editanto di conseguenza
+```
 
