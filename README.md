@@ -177,3 +177,46 @@ resize2fs /dev/mapper/ubuntu--vg-ubuntu--lv
 df -h
 ```
 
+
+# IBM As400 connect su Linux
+```
+sudo apt update
+curl https://public.dhe.ibm.com/software/ibmi/products/odbc/debs/dists/1.1.0/ibmi-acs-1.1.0.list | sudo tee /etc/apt/sources.list.d/ibmi-acs-1.1.0.list
+sudo apt update
+sudo apt install ibm-iaccess
+```
+
+Creo connessione SQL
+```
+[DataTest]
+Description             = IBM i Access ODBC Driver 64-bit
+Driver                  = IBM i Access ODBC Driver 64-bit
+System                  = 192.168.....
+UserID                  = PSW
+Password                = PSW
+Naming                  = 0
+DefaultLibraries        = Libreria di Default
+Database                =
+ConnectionType          = 0
+CommitMode              = 2
+ExtendedDynamic         = 1
+DefaultPkgLibrary       = QGPL
+DefaultPackage          = A/DEFAULT(IBM),2,0,1,0,512
+AllowDataCompression    = 1
+MaxFieldLength          = 32
+BlockFetch              = 1
+BlockSizeKB             = 128
+ExtendedColInfo         = 0
+LibraryView             = ENU
+AllowUnsupportedChar    = 0
+ForceTranslation        = 0
+Trace                   = 0
+```
+
+Connetto
+```
+isql DataTest
+```
+
+
+
