@@ -20,6 +20,12 @@ Aggiornare o installare TOOLS per Vm
 sudo apt-get install open-vm-tools
 ```
 
+## Add user
+```
+sudo adduser userNameHere
+sudo usermod -aG sudo [name-of-user]
+```
+
 ## NTP
 ```
 sudo apt-get install ntp -y
