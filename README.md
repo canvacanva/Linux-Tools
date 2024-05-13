@@ -237,6 +237,7 @@ sudo apt-get update
 sudo ACCEPT_EULA=Y apt-get install -y msodbcsql17 /oppure sudo ACCEPT_EULA=Y apt-get install -y msodbcsql18
 sudo ACCEPT_EULA=Y apt-get install -y mssql-tools
 apt-get install -y unixodbc-dev
+sudo apt-get install php7.4-dev
 sudo pecl install sqlsrv /oppure sudo pecl install sqlsrv-5.10.1
 sudo pecl install pdo_sqlsrv /oppure sudo pecl install pdo_sqlsrv-5.10.1
 # Continuare poi con la guida su link editanto di conseguenza
