@@ -245,7 +245,7 @@ sudo pecl install pdo_sqlsrv /oppure sudo pecl install pdo_sqlsrv-5.10.1
 printf "; priority=20\nextension=sqlsrv.so\n" > /etc/php/8.1/mods-available/sqlsrv.ini //usare la versine php corretta
 printf "; priority=30\nextension=pdo_sqlsrv.so\n" > /etc/php/8.1/mods-available/pdo_sqlsrv.ini //usare la versine php corretta
 exit
-sudo phpenmod -v 8.1 sqlsrv pdo_sqlsrv
+sudo phpenmod -v 7.4 sqlsrv pdo_sqlsrv
 # Continuare poi con la guida su link editanto di conseguenza
 ```
 
