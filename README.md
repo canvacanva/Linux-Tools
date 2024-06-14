@@ -233,6 +233,8 @@ Esempio versione di PHP precedenti:
 sudo wget https://packages.microsoft.com/keys/microsoft.asc | sudo tee /etc/apt/trusted.gpg.d/microsoft.asc
 sudo curl https://packages.microsoft.com/config/ubuntu/$(lsb_release -rs)/prod.list > /etc/apt/sources.list.d/mssql-release.list
 # aggiungere trust sulla repo scaricata: #add deb [trusted=yes]
+nano /etc/apt/sources.list.d/mssql-release.list
+#deb [trusted=yes] https://packages.microsoft.com/ubuntu/22.04/prod jammy main
 sudo apt-get update
 sudo ACCEPT_EULA=Y apt-get install -y msodbcsql17 /oppure sudo ACCEPT_EULA=Y apt-get install -y msodbcsql18
 sudo ACCEPT_EULA=Y apt-get install -y mssql-tools
