@@ -82,8 +82,9 @@ mount -a
 ```
 
 ## User Group
-user in group www-data: ```grep ^www-data /etc/group```
-add needed user: ```usermod -a -G www-data USEEEER```
+Show uses in group www-data: ```grep ^www-data /etc/group```
+
+Add needed user: ```usermod -a -G www-data USEEEER```
 
 
 ## Reboot
